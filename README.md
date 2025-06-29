@@ -86,10 +86,12 @@ The `returnValue` property is automatically set to the `value` of the button tha
 
     This basically means that at that width 550px and larger, apply the css styles below. You can also express media queries without the screen
 
-        ```css
+    ```css
     @media (min-width: 550px) {
         body{
             background-color: yellow;
         }
     }
     ```
+
+When working with Media Queries we usually start by writing the basic styles without media queries and work wider and wider adding media queries and changes wherever needed to affect the design as required.
