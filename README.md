@@ -105,7 +105,7 @@ margin: 0 auto;
     - Grid: Laying things out in two directions at a time
 
 
-7. **Why Use Flexbox?**
+7. **Flexbox**
 
    Flexbox is a CSS layout system that makes it easier to design flexible, responsive layouts. Here are some beginner-friendly reasons to use Flexbox:
 
@@ -152,3 +152,5 @@ Together, these three lines make it easy to perfectly center content (both verti
 ### 06/30/2025
 
 _(Notes for this day to be added)_
+
+1. 
