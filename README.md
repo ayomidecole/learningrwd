@@ -153,4 +153,40 @@ Together, these three lines make it easy to perfectly center content (both verti
 
 _(Notes for this day to be added)_
 
-1. 
+1. Here’s a simple way to style a navigation bar using Flexbox:
+
+```css
+.container {
+    background-color: indigo;
+    font-family: "Oswald", sans-serif;
+    font-size: 1rem;
+    min-height: 2.75rem;
+    display: flex;              /* Use Flexbox for layout */
+    align-items: center;        /* Vertically center items */
+    padding: 0 1rem;
+}
+
+/* Style for all navigation links */
+.item,
+.last-item {
+    color: #ebebeb;
+    text-decoration: none;
+}
+
+/* Space out the links except for the last one */
+.item {
+    margin-right: 1rem;
+}
+
+/* Push the last link ("Contact Us") to the far right */
+.last-item {
+    margin-left: auto;
+}
+```
+
+**How does this work?**
+
+- `.container` uses `display: flex;` to arrange its child elements (the navigation links) in a row.
+- `align-items: center;` centers the links vertically inside the bar.
+- `.item` adds spacing between each link.
+- `.last-item` uses `margin-left: auto;` which tells the browser to push it as far to the right as possible. This is a common Flexbox trick to separate one item from the rest—great for things like a “Contact Us” link in a navigation bar!
