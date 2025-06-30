@@ -1,97 +1,101 @@
-Responsive Web Design
-======================
+# Responsive Web Design
 
-I am using this space to document the code and the learnings from the Book
-[Responsive Web Design](http://rwd.education) by Ben Frain
+This document tracks my notes and code from the book [Responsive Web Design](http://rwd.education) by Ben Frain.
 
-# Learnings
+---
 
+## Learnings
 
-## 06/29/2025
+### 06/29/2025
 
-1. Learnt about how the HTML  dialog box and how it works
+1. **Dialog Element in HTML**
 
-```html
-<body>
-    <button id="launchDialog">Where is the dialog?</button>
-    <p id="formResult"></p>
-    <dialog id="dialogEle">
-        <form method="dialog">
-            <h1>How about this? A native Dialog.</h1>
-            <p>So, only thing left to do is dismiss me.</p>
-            <button value="Disnmissed">Dismiss Dialog</button>
-        </form>
-    </dialog>
-    <script>
-        const dialogEle = document.getElementById('dialogEle');
-        const launchBtn = document.getElementById('launchDialog');
-        const formResult = document.getElementById('formResult');
+   The `<dialog>` element provides a native way to create dialog boxes in HTML. It's hidden by default and shown via JavaScript.
 
-        launchBtn.addEventListener("click", () => dialogEle.showModal());
-        dialogEle.addEventListener('close', () => {
-            formResult.textContent = dialogEle.returnValue;
-        })
-    </script>
-</body>
-```
+   ```html
+   <body>
+     <button id="launchDialog">Where is the dialog?</button>
+     <p id="formResult"></p>
+     <dialog id="dialogEle">
+       <form method="dialog">
+         <h1>How about this? A native Dialog.</h1>
+         <p>So, only thing left to do is dismiss me.</p>
+         <button value="Dismissed">Dismiss Dialog</button>
+       </form>
+     </dialog>
+     <script>
+       const dialogEle = document.getElementById('dialogEle');
+       const launchBtn = document.getElementById('launchDialog');
+       const formResult = document.getElementById('formResult');
 
-The `<dialog>` element is hidden by default and requires JavaScript's `showModal()` method to become visible. It can be closed in several ways:
-- Clicking a button with `formmethod="dialog"` inside the dialog
-- Pressing the Escape key
-- Programmatically with `dialog.close()`
+       launchBtn.addEventListener("click", () => dialogEle.showModal());
+       dialogEle.addEventListener('close', () => {
+         formResult.textContent = dialogEle.returnValue;
+       });
+     </script>
+   </body>
+   ```
 
-The `returnValue` property is automatically set to the `value` of the button that closed the dialog, allowing you to determine which action was taken.
+   - The `<dialog>` element is hidden until `showModal()` is called.
+   - It can be closed by:
+     - Clicking a `<button>` inside with `method="dialog"`.
+     - Pressing Escape.
+     - Calling `dialog.close()`.
+   - The `returnValue` property is set to the `value` of the button that closed it.
 
-2. Delved deeper into media queries, which allow us to target specific CSS styles depending on device capabilities.
+2. **Meta Viewport Tag**
 
-    ### `<meta>` viewport tag
+   The `<meta>` viewport tag controls how a page is scaled and displayed on mobile devices.
 
-    The `<meta>` viewport tag allows web pages to communicate to mobile browsers how the content should be scaled and rendered.
+   ```html
+   <meta 
+     name="viewport"
+     content="width=device-width, initial-scale=2.0, user-scalable=no"
+   />
+   ```
 
-    ```html
-    <meta 
-        name="viewport"
-        content="width=device-width, initial-scale=2.0, user-scalable=no"
-    />
-    ```
+   - `width=device-width`: Page width matches device's screen.
+   - `initial-scale=2.0`: Zooms in 2x by default.
+   - `user-scalable=no`: Prevents zooming.
 
-    In the meta tag above, which should be placed in the `<head>` section of the HTML document:
+   The most common usage is:
 
-    - `name="viewport"` tells the browser to apply viewport settings.
-    - `width=device-width` sets the page width to match the device's screen width.
-    - `initial-scale=2.0` sets the initial zoom level to 2x.
-    - `user-scalable=no` prevents the user from zooming in or out.
+   ```html
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   ```
 
-    These settings help ensure your website looks and behaves correctly on various devices.
+3. **Fluid Layouts**
 
-    The most common configuration of the `<meta>` tag is:
+   - Use percentage-based widths instead of fixed widths for flexible layouts.
 
-    ```html
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    ```
+4. **Media Queries**
 
-3. For fluid layouts you should use percentages rather than fixed widths.
+   Media queries apply CSS rules based on device properties (like viewport width):
 
-4. ### Media Queries
+   ```css
+   @media screen and (min-width: 550px) {
+     body {
+       background-color: yellow;
+     }
+   }
+   ```
 
-    This is the media query syntax:
+   Or, omitting `screen`:
 
-    ```css
-    @media screen and (min-width: 550px) {
-        body{
-            background-color: yellow;
-        }
-    }
-    ```
+   ```css
+   @media (min-width: 550px) {
+     body {
+       background-color: yellow;
+     }
+   }
+   ```
 
-    This basically means that at that width 550px and larger, apply the css styles below. You can also express media queries without the screen
+   The typical workflow is:
+   - Write base styles for all devices.
+   - Add media queries as the design "grows" to accommodate wider screens.
 
-    ```css
-    @media (min-width: 550px) {
-        body{
-            background-color: yellow;
-        }
-    }
-    ```
+---
 
-When working with Media Queries we usually start by writing the basic styles without media queries and work wider and wider adding media queries and changes wherever needed to affect the design as required.
+### 06/30/2025
+
+_(Notes for this day to be added)_
