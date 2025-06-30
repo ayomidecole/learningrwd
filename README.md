@@ -94,6 +94,16 @@ This document tracks my notes and code from the book [Responsive Web Design](htt
    - Write base styles for all devices.
    - Add media queries as the design "grows" to accommodate wider screens.
 
+5. We can center an element within its parent element with:
+
+```css
+margin: 0 auto;
+```
+
+6. There are two important tools for responsive design:
+    - Flexbox: For laying things out in one directions at a time
+    - Grid: Laying things out in two directions at a time
+
 ---
 
 ### 06/30/2025
