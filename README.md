@@ -125,6 +125,28 @@ margin: 0 auto;
      Flexbox layouts adapt smoothly to different screen sizes and devices.
 
 8. Flexbox has four key characteristics: direction, allignment, ordering and flexibility
+
+9. In the code below from example 3 (`ch04/example3.html` and `ch04/example3.css`):
+
+```css
+.CenterMe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+```
+
+- `display: flex;`  
+  This turns the element into a flex container. All direct children of this element become flex items, which allows you to use powerful alignment and spacing features.
+
+- `align-items: center;`  
+  This vertically centers the flex items along the container's cross axis (which is up and down by default). It makes the children sit in the vertical middle of the container.
+
+- `justify-content: center;`  
+  This horizontally centers the flex items along the container's main axis (which is left to right by default). It moves the children into the horizontal center of the container.
+
+Together, these three lines make it easy to perfectly center content (both vertically and horizontally) inside a container.
+
 ---
 
 ### 06/30/2025
