@@ -188,5 +188,5 @@ _(Notes for this day to be added)_
 
 - `.container` uses `display: flex;` to arrange its child elements (the navigation links) in a row.
 - `align-items: center;` centers the links vertically inside the bar.
-- `.item` adds spacing between each link.
+- `.item` uses `margin-right` to add space to the right of each link, separating them from the next link.
 - `.last-item` uses `margin-left: auto;` which tells the browser to push it as far to the right as possible. This is a common Flexbox trick to separate one item from the rest—great for things like a “Contact Us” link in a navigation bar!
