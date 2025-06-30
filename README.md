@@ -123,6 +123,8 @@ margin: 0 auto;
 
    - **Responsive by Design**  
      Flexbox layouts adapt smoothly to different screen sizes and devices.
+
+8. Flexbox has four key characteristics: direction, allignment, ordering and flexibility
 ---
 
 ### 06/30/2025
