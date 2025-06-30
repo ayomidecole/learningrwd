@@ -184,6 +184,8 @@ _(Notes for this day to be added)_
 }
 ```
 
+![Navigation Bar](./Screenshot%202025-06-30%20at%206.33.44 PM.png)
+
 **How does this work?**
 
 - `.container` uses `display: flex;` to arrange its child elements (the navigation links) in a row.
