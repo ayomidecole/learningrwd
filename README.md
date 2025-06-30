@@ -192,3 +192,38 @@ _(Notes for this day to be added)_
 - `align-items: center;` centers the links vertically inside the bar.
 - `.item` uses `margin-right` to add space to the right of each link, separating them from the next link.
 - `.last-item` uses `margin-left: auto;` which tells the browser to push it as far to the right as possible. This is a common Flexbox trick to separate one item from the rest—great for things like a “Contact Us” link in a navigation bar!
+
+2. **Reverse the Order of Navigation Links**
+
+To display the navigation links in reverse order (right-to-left), add this CSS to the `.container`:
+
+```css
+.container {
+    flex-direction: row-reverse;
+}
+```
+
+To push the "Contact Us" link to the far left in this reversed layout, update its style:
+
+```css
+.last-item {
+    margin-right: auto;
+}
+```
+
+![Reversed Nav Bar](./Screenshot%202025-06-30%20at%206.51.01 PM.png)
+
+---
+
+3. **Stack the Navbar Vertically**
+
+To arrange the navigation links in a column (top-to-bottom), modify the `.container` like this:
+
+```css
+.container {
+    flex-direction: column;
+    align-items: center;
+}
+```
+
+![Stacked Nav Bar](./Screenshot%202025-06-30%20at%206.54.52 PM.png)
