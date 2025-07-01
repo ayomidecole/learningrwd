@@ -1,0 +1,19 @@
+.container {
+    background-color: indigo;
+    display: flex;
+    height: 200px;
+    width: 400px;
+}
+
+.item {
+    background-color: #34005b;
+    display: flex;
+    height: 100px;
+    width: 200px;
+    color: white;
+}
+
+.AlignSelf {
+    /* Aligns this item to the bottom of the flex container */
+    align-self: flex-end;
+}

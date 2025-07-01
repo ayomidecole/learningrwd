@@ -151,7 +151,6 @@ Together, these three lines make it easy to perfectly center content (both verti
 
 ### 06/30/2025
 
-_(Notes for this day to be added)_
 
 1. Here’s a simple way to style a navigation bar using Flexbox:
 
@@ -227,3 +226,36 @@ To arrange the navigation links in a column (top-to-bottom), modify the `.contai
 ```
 
 ![Stacked Nav Bar](./Screenshot%202025-06-30%20at%206.54.52 PM.png)
+
+---
+
+### 07/01/2025
+
+1. **Flexbox Alignment Properties**
+
+Understanding Flexbox alignment starts with knowing the two axes:
+
+- **Main Axis**
+- **Cross Axis**
+
+Which axis is which depends on the value of the `flex-direction` property:
+
+- **`flex-direction: row`** (the default):  
+  - Main axis: **horizontal** (left to right)
+  - Cross axis: **vertical** (top to bottom)
+- **`flex-direction: column`**:  
+  - Main axis: **vertical** (top to bottom)
+  - Cross axis: **horizontal** (left to right)
+
+> **Note:**  
+> - `justify-content` aligns items along the **main axis**.
+> - `align-items` aligns items along the **cross axis**.
+> - `align-content` aligns the entire flex lines (when wrapping) along the cross axis.
+
+2. **Cross-Axis Alignment Values in Flexbox:**
+
+- `flex-start`: Align items to the start of the cross axis.
+- `flex-end`: Align items to the end of the cross axis.
+- `center`: Center items along the cross axis.
+- `baseline`: Align items so their text baselines line up.
+- `stretch`: Stretch items to fill the container (default).
