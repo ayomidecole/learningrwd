@@ -1,0 +1,16 @@
+.container{
+    background-color: indigo;
+    display: flex;
+    justify-content: space-between;
+    height: 200px;
+    width: 100%;
+}
+
+.item {
+    background-color: #34005b;
+    display: flex;
+    height: 100px;
+    flex: 1 1 auto;
+    border: 1px solid #ebebeb;
+    color: aliceblue;
+}

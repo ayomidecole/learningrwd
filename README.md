@@ -252,10 +252,37 @@ Which axis is which depends on the value of the `flex-direction` property:
 > - `align-items` aligns items along the **cross axis**.
 > - `align-content` aligns the entire flex lines (when wrapping) along the cross axis.
 
-2. **Cross-Axis Alignment Values in Flexbox:**
+2. **Cross-Axis Alignment Values in Flexbox: `align-items` or `align-self`**
 
 - `flex-start`: Align items to the start of the cross axis.
 - `flex-end`: Align items to the end of the cross axis.
 - `center`: Center items along the cross axis.
 - `baseline`: Align items so their text baselines line up.
 - `stretch`: Stretch items to fill the container (default).
+
+3. **Main-Axis Alignment Values in Flexbox: `justify-content`**
+
+- `flex-start`: Items are packed toward the start of the main axis (default).
+- `flex-end`: Items are packed toward the end of the main axis.
+- `center`: Items are centered along the main axis.
+- `space-between`: Items are evenly distributed; first item at the start, last at the end.
+- `space-around`: Items are evenly distributed with equal space around them.
+- `space-evenly`: Items are distributed so the spacing between any two items (and the edges) is equal.
+
+4. **Flexbox Shorthand: `flex`**
+
+You can use the `flex` property as a shorthand to set how a flex item grows, shrinks, and what its initial size should be:
+
+```css
+.item {
+  flex: 1 1 100px;
+}
+```
+
+This means:
+
+- `flex-grow: 1;` &nbsp;→ The item can grow to fill available space.
+- `flex-shrink: 1;` &nbsp;→ The item can shrink if needed.
+- `flex-basis: 100px;` &nbsp;→ The item starts at 100px wide (or tall, depending on direction).
+
+So, each `.item` will start at 100px, but will stretch or shrink as needed to fit the container.
