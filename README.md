@@ -366,5 +366,26 @@ So, each `.item` will take up exactly one third of the container and won’t str
 - `[class^='grid-item']`  
   Adds a dashed outline, increases the font size, applies semi-transparent text color, and centers the content with padding.
 
+![My First Grid Example](./Screenshot%202025-07-05%20at%205.23.23 PM.png)
+
+4. 
+  You can stll use alignment properties from flexbox in Grid
+```css
+.my-first-grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: 200px 200px;
+    grid-template-columns: 200px 200px;
+    background-color: #e4e4e4;
+    /* You can use alignment properties similar to Flexbox: */
+    align-items: center;    /* Vertically center grid items within their cells */
+    justify-items: center;  /* Horizontally center grid items within their cells */
+    /* Or, to align the entire grid inside its parent: */
+    /* justify-content: center; */
+    /* align-content: center; */
+}
+```
+
+![Centered & Aligned Grid Example](./Screenshot%202025-07-05%20at%205.22.18 PM.png)
 
 
