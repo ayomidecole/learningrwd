@@ -289,6 +289,24 @@ So, each `.item` will start at 100px, but will stretch or shrink as needed to fi
 
 ---
 
+Another example:
+
+```css
+.item {
+  flex: 0 0 33.33%;
+}
+```
+
+This means:
+
+- `flex-grow: 0;` &nbsp;→ The item will not grow to fill extra space.
+- `flex-shrink: 0;` &nbsp;→ The item will not shrink smaller than its basis.
+- `flex-basis: 33.33%;` &nbsp;→ The item will always be 33.33% of the container's width (or height, depending on direction).
+
+So, each `.item` will take up exactly one third of the container and won’t stretch or shrink.
+
+---
+
 ### 07/05/2025
 
 1. 
