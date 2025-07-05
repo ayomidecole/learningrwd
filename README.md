@@ -309,4 +309,59 @@ So, each `.item` will take up exactly one third of the container and won’t str
 
 ### 07/05/2025
 
-1. 
+1. **Grid**
+
+   CSS Grid is a two-dimensional layout system, unlike Flexbox which handles only one dimension at a time. With Flexbox, you lay out items in either a row or a column. Grid allows you to lay out items in both rows and columns simultaneously.
+
+2. **Basic Grid Syntax**
+
+   When using Grid, you specify:
+   - How many rows and columns the grid should have
+   - How those rows and columns are sized
+   - Where each grid item is placed
+   - How the grid adapts when its size changes or when more items are added
+
+3. **Setting up a Grid Layout**
+
+   To create a basic 2x2 grid, use the following CSS:
+
+  ``` css
+.my-first-grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: 200px 200px;
+    grid-template-columns: 200px 200px;
+    background-color: #e4e4e4;
+}
+.grid-item-1 {
+    grid-row: 1;
+    grid-column: 1;
+}
+.grid-item-2 {
+    grid-row: 2;
+    grid-row: 2;
+}
+.grid-item-3 {
+    grid-row: 1;
+    grid-column: 2;
+}
+.grid-item-4 {
+    grid-row: 2;
+    grid-column: 1;
+}
+[class^='grid-item'] {
+    outline: 3px dashed #f90;
+    font-size: 30px;
+    color: #3333;
+    padding: 50% 50%;
+}
+    
+  ```
+
+
+   - `.my-first-grid` makes the container a 2x2 grid with gaps and a background.
+   - Each `.grid-item-*` positions its item in a specific grid cell using `grid-row` and `grid-column`.
+   - `[class^='grid-item']` adds an outline, large font, semi-transparent text, and centers the content with padding.
+
+
+

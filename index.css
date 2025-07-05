@@ -854,6 +854,11 @@ blockquote {
     }
 
     .rwd-Chapter {
-        flex: 0 0 33.33%
+        flex: 0 0 33.33%;
+        padding: 0 20px;
+    }
+
+    .rwd-Chapter::before {
+        left: -20px;
     }
 }
