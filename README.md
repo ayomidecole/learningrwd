@@ -459,3 +459,5 @@ So, each `.item` will take up exactly one third of the container and won’t str
 
    ![Grid auto rows and columns example](./Screenshot%202025-07-05%20at%207.16.17 PM.png)
 
+   Without any extra CSS, when we add more items to the grid, they are automatically placed into new rows or columns as needed.
+
