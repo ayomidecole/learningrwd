@@ -321,71 +321,115 @@ So, each `.item` will take up exactly one third of the container and won’t str
    - Where each grid item is placed
    - How the grid adapts when its size changes or when more items are added
 
-3. **Setting up a Grid Layout**
+3. **Setting Up a Grid Layout**
 
    To create a basic 2x2 grid, use the following CSS:
 
-  ``` css
-.my-first-grid {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-rows: 200px 200px;
-    grid-template-columns: 200px 200px;
-    background-color: #e4e4e4;
-}
-.grid-item-1 {
-    grid-row: 1;
-    grid-column: 1;
-}
-.grid-item-2 {
-    grid-row: 2;
-    grid-row: 2;
-}
-.grid-item-3 {
-    grid-row: 1;
-    grid-column: 2;
-}
-.grid-item-4 {
-    grid-row: 2;
-    grid-column: 1;
-}
-[class^='grid-item'] {
-    outline: 3px dashed #f90;
-    font-size: 30px;
-    color: #3333;
-    padding: 50% 50%;
-}
-    
-  ```
-- `.my-first-grid`  
-  Turns the container into a 2x2 grid, adds gaps between cells, and sets a background color.
+   ```css
+   .my-first-grid {
+       display: grid;
+       grid-gap: 10px;
+       grid-template-rows: 200px 200px;
+       grid-template-columns: 200px 200px;
+       background-color: #e4e4e4;
+   }
+   .grid-item-1 {
+       grid-row: 1;
+       grid-column: 1;
+   }
+   .grid-item-2 {
+       grid-row: 2;
+       grid-column: 2;
+   }
+   .grid-item-3 {
+       grid-row: 1;
+       grid-column: 2;
+   }
+   .grid-item-4 {
+       grid-row: 2;
+       grid-column: 1;
+   }
+   [class^='grid-item'] {
+       outline: 3px dashed #f90;
+       font-size: 30px;
+       color: #3333;
+       padding: 50% 50%;
+   }
+   ```
+   - `.my-first-grid`: Turns the container into a 2x2 grid, adds gaps between cells, and sets a background color.
+   - `.grid-item-*`: Places each item into a specific row and column within the grid using `grid-row` and `grid-column`.
+   - `[class^='grid-item']`: Adds a dashed outline, increases the font size, applies semi-transparent text color, and centers the content with padding.
 
-- `.grid-item-*`  
-  Places each item into a specific row and column within the grid using `grid-row` and `grid-column`.
+   ![My First Grid Example](./Screenshot%202025-07-05%20at%205.23.23 PM.png)
 
-- `[class^='grid-item']`  
-  Adds a dashed outline, increases the font size, applies semi-transparent text color, and centers the content with padding.
+4. **Grid Alignment Properties**
 
-![My First Grid Example](./Screenshot%202025-07-05%20at%205.23.23 PM.png)
+   You can still use alignment properties from Flexbox in Grid:
 
-4. 
-  You can stll use alignment properties from flexbox in Grid
-```css
-.my-first-grid {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-rows: 200px 200px;
-    grid-template-columns: 200px 200px;
-    background-color: #e4e4e4;
-    /* You can use alignment properties similar to Flexbox: */
-    align-items: center;    /* Vertically center grid items within their cells */
-    justify-items: center;  /* Horizontally center grid items within their cells */
-    /* Or, to align the entire grid inside its parent: */
-    /* justify-content: center; */
-    /* align-content: center; */
-}
-```
+   ```css
+   .my-first-grid {
+       display: grid;
+       grid-gap: 10px;
+       grid-template-rows: 200px 200px;
+       grid-template-columns: 200px 200px;
+       background-color: #e4e4e4;
+       /* You can use alignment properties similar to Flexbox: */
+       align-items: center;    /* Vertically center grid items within their cells */
+       justify-items: center;  /* Horizontally center grid items within their cells */
+       /* Or, to align the entire grid inside its parent: */
+       /* justify-content: center; */
+       /* align-content: center; */
+   }
+   ```
 
-![Centered & Aligned Grid Example](./Screenshot%202025-07-05%20at%205.22.18 PM.png)
+   ![Centered & Aligned Grid Example](./Screenshot%202025-07-05%20at%205.22.18 PM.png)
 
+5. **Using `inline-grid` and Centering Content**
 
+   By default, when you use `display: grid`, the grid container stretches to fill the entire width of its parent—even if your content doesn't need that much space. Sometimes, you want the grid to only be as wide as its content and sit nicely centered on the page.
+
+   To do this, use `display: inline-grid` on the grid container. This makes the grid shrink-wrap its content. To center the items inside each grid cell, you can also use grid or flexbox alignment properties on the grid items.
+
+   Here’s how you can do it:
+
+   ```css
+   .my-first-grid {
+       display: inline-grid;              /* Grid only as wide as needed */
+       grid-gap: 10px;
+       grid-template-rows: 200px 200px;
+       grid-template-columns: 200px 200px;
+       background-color: #e4e4e4;
+   }
+
+   .grid-item-1 {
+       grid-row: 1;
+       grid-column: 1;
+   }
+   .grid-item-2 {
+       grid-row: 2;
+       grid-column: 2;
+   }
+   .grid-item-3 {
+       grid-row: 1;
+       grid-column: 2;
+   }
+   .grid-item-4 {
+       grid-row: 2;
+       grid-column: 1;
+   }
+
+   [class^='grid-item'] {
+       display: grid;                  /* Makes each item a grid container */
+       align-items: center;            /* Vertically center content */
+       justify-content: center;        /* Horizontally center content */
+       outline: 3px dashed #f90;
+       font-size: 30px;
+       color: black;
+   }
+   ```
+
+   - `.my-first-grid` uses `inline-grid` so the grid container only takes up as much horizontal space as its content, instead of stretching to fill the whole page.
+   - Each `.grid-item-*` is placed into a specific spot in the grid.
+   - `[class^='grid-item']` turns each item into a grid container and centers its content both vertically and horizontally.
+
+![Inline Grid Centered Example](./Screenshot%202025-07-05%20at%205.36.44 PM.png)
