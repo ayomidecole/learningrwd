@@ -432,8 +432,7 @@ So, each `.item` will take up exactly one third of the container and won’t str
    - Each `.grid-item-*` is placed into a specific spot in the grid.
    - `[class^='grid-item']` turns each item into a grid container and centers its content both vertically and horizontally.
 
-![Inline Grid Centered Example](./Screenshot%202025-07-05%20at%205.36.44 PM.png)
-
+   ![Inline Grid Centered Example](./Screenshot%202025-07-05%20at%205.36.44 PM.png)
 
 6. **Explicit and Implicit Grid**
 
@@ -461,3 +460,20 @@ So, each `.item` will take up exactly one third of the container and won’t str
 
    Without any extra CSS, when we add more items to the grid, they are automatically placed into new rows or columns as needed.
 
+7. You can also set *intermittent patterns* for implicit grid tracks.
+
+   ```css
+   .my-first-grid {
+       display: inline-grid;
+       grid-gap: 10px;
+       grid-template-rows: 200px 200px;
+       grid-template-columns: 200px 200px;
+       grid-auto-rows: 100px 150px;      /* Alternates: first implicit row 100px, next 150px, then repeats */
+       grid-auto-columns: 100px 150px;   /* Alternates: first implicit col 100px, next 150px, then repeats */
+       background-color: #e4e4e4;
+   }
+   ```
+
+   ![Grid with Intermittent Implicit Track Sizes](./Screenshot%202025-07-05%20at%207.42.19 PM.png)
+
+8. ***gird-auto-flow***
