@@ -357,11 +357,14 @@ So, each `.item` will take up exactly one third of the container and won’t str
 }
     
   ```
+- `.my-first-grid`  
+  Turns the container into a 2x2 grid, adds gaps between cells, and sets a background color.
 
+- `.grid-item-*`  
+  Places each item into a specific row and column within the grid using `grid-row` and `grid-column`.
 
-   - `.my-first-grid` makes the container a 2x2 grid with gaps and a background.
-   - Each `.grid-item-*` positions its item in a specific grid cell using `grid-row` and `grid-column`.
-   - `[class^='grid-item']` adds an outline, large font, semi-transparent text, and centers the content with padding.
+- `[class^='grid-item']`  
+  Adds a dashed outline, increases the font size, applies semi-transparent text color, and centers the content with padding.
 
 
 
