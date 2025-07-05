@@ -286,3 +286,9 @@ This means:
 - `flex-basis: 100px;` &nbsp;→ The item starts at 100px wide (or tall, depending on direction).
 
 So, each `.item` will start at 100px, but will stretch or shrink as needed to fit the container.
+
+---
+
+### 07/05/2025
+
+1. 
