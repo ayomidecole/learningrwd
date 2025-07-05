@@ -433,3 +433,29 @@ So, each `.item` will take up exactly one third of the container and won’t str
    - `[class^='grid-item']` turns each item into a grid container and centers its content both vertically and horizontally.
 
 ![Inline Grid Centered Example](./Screenshot%202025-07-05%20at%205.36.44 PM.png)
+
+
+6. **Explicit and Implicit Grid**
+
+   - **Explicit grid:** The grid you define directly with `grid-template-rows` and `grid-template-columns`.
+   - **Implicit grid:** When you add more items than your explicit grid allows, CSS Grid automatically creates extra rows or columns to fit them—this is called the implicit grid.
+
+   For example, if you have a 2x2 grid and add a fifth item like `<div class="grid-item-5">5</div>`, Grid creates an extra row for it:
+
+   ![Grid with 5 Items (Implicit Row)](./Screenshot%202025-07-05%20at%207.10.50 PM.png)
+
+   You can control the size of these implicitly created tracks using the `grid-auto-rows` and `grid-auto-columns` properties:
+   ```css
+   .my-first-grid {
+       grid-auto-rows: 200px;
+       grid-auto-columns: 200px;
+   }
+   ```
+   - `grid-auto-rows: 200px;`  
+     This sets the height of any new (implicit) rows the grid creates to 200 pixels each. If you add extra items that don't fit in the defined rows, the grid will make more rows, each 200px tall.
+
+   - `grid-auto-columns: 200px;`  
+     This sets the width of any new (implicit) columns the grid creates to 200 pixels each. If you have more items than defined columns, the grid will add extra columns, each 200px wide.
+
+   ![Grid auto rows and columns example](./Screenshot%202025-07-05%20at%207.16.17 PM.png)
+
