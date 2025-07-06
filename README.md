@@ -497,3 +497,31 @@ So, each `.item` will take up exactly one third of the container and won’t str
    ```
 
    ![Grid Auto Flow Column Example](./Screenshot%202025-07-05%20at%208.00.25 PM.png)
+
+  ---
+
+### 07/06/2025
+
+1. **Placing and Sizing Grid Layout Items**
+
+   Here are some beginner-friendly explanations for key CSS Grid properties:
+
+   - **`gap`**:  
+     The `gap` property adds space between grid rows and columns (like gutters).  
+     - If you use one value, both rows and columns get the same space:  
+       `gap: 20px;` (20px between all rows and columns)
+     - If you use two values, the first is for rows and the second is for columns:  
+       `gap: 10px 30px;` (10px between rows, 30px between columns)
+
+   - **`repeat()`**:  
+     The `repeat()` function helps you easily create grids with repeating patterns.  
+     Example:  
+     `grid-template-columns: repeat(4, 1fr);`  
+     This means "make 4 columns, each 1 fraction of the available space wide."  
+     The first number is how many times to repeat, the second is what to repeat (like a size).
+
+   - **`fr` units**:  
+     The `fr` unit stands for "fraction of available space".  
+     - If you have `grid-template-columns: 2fr 1fr;`  
+       The first column gets twice as much space as the second.
+     - `fr` is a powerful way to make flexible layouts without hardcoding pixel values.
