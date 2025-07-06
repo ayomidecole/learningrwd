@@ -476,4 +476,24 @@ So, each `.item` will take up exactly one third of the container and won’t str
 
    ![Grid with Intermittent Implicit Track Sizes](./Screenshot%202025-07-05%20at%207.42.19 PM.png)
 
-8. ***gird-auto-flow***
+8. **`grid-auto-flow`**
+
+   The `grid-auto-flow` property controls how implicitly added items are placed in the grid—whether new items fill rows first (default), or columns first.
+
+   - `grid-auto-flow: row;` (default): Extra items fill into new rows.
+   - `grid-auto-flow: column;`: Extra items fill into new columns instead.
+
+   For example, setting `grid-auto-flow: column` makes the grid add extra columns for new items, so the items flow horizontally across the page:
+
+   ```css
+   .my-first-grid {
+       display: grid;
+       grid-template-rows: 200px 200px;
+       grid-template-columns: 200px 200px;
+       grid-auto-flow: column;
+       grid-gap: 10px;
+       background-color: #e4e4e4;
+   }
+   ```
+
+   ![Grid Auto Flow Column Example](./Screenshot%202025-07-05%20at%208.00.25 PM.png)
