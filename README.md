@@ -525,3 +525,52 @@ So, each `.item` will take up exactly one third of the container and won’t str
      - If you have `grid-template-columns: 2fr 1fr;`  
        The first column gets twice as much space as the second.
      - `fr` is a powerful way to make flexible layouts without hardcoding pixel values.
+
+2. **Placing Items in a Grid**
+
+   You can control where each grid item appears by specifying which grid lines it should start and end at. This is done with the `grid-column` and `grid-row` properties.
+
+   - **Using `grid-column` and `grid-row`:**
+
+     ```css
+     .grid-item3 {
+         grid-column: 2 / -1;
+     }
+     ```
+
+     - `grid-column: 2 / -1;`  
+       This means the item will start at the 2nd vertical grid line and stretch to the last grid line (`-1` is always the last line).  
+       So, it spans from column 2 all the way to the end of the grid.
+
+     ```css
+     .grid-item4 {
+         grid-row: 4 / 7;
+     }
+     ```
+
+     - `grid-row: 4 / 7;`  
+       This means the item will start at the 4th horizontal grid line and end at the 7th, spanning three rows in total.
+
+   - The syntax for both properties is:  
+     `property: start-line / end-line;`  
+     The **start line** is where the item begins, the **end line** is where it stops (not inclusive).
+
+3. **Using `span` to Stretch Across Tracks**
+
+   Instead of specifying an exact end line, you can tell the item to span a certain number of rows or columns from the starting line:
+
+   ```css
+   .grid-item17 {
+       grid-row: 6 / span 2;
+       grid-column: 2 / 3;
+   }
+   ```
+
+   - `grid-row: 6 / span 2;`  
+     This starts the item at row line 6 and makes it span 2 rows downward.
+   - `grid-column: 2 / 3;`  
+     This puts the item in the 2nd column only.
+
+   **Summary:**  
+   - Use `grid-column` and `grid-row` to place and size grid items by lines.
+   - Use `span` to make an item stretch across multiple rows or columns from its starting line.
