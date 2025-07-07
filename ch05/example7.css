@@ -1,0 +1,41 @@
+.my-first-grid {
+    display: inline-grid;
+    grid-gap: 10px;
+    grid-template-columns:
+        [left-start] 200px
+        [left-end center-start] 200px
+        [center-end right-start] 200px
+        [right-end];
+    grid-template-rows:
+        [top-start] 200px
+        [top-end middle-start] 200px
+        [middle-end bottom-start] 200px
+        [bottom-end];
+    background-color: #e4e4e4;
+}
+
+.grid-item-1 {
+    grid-area: middle / center;
+}
+
+.grid-item-2 {
+    grid-area: bottom / right;
+}
+
+.grid-item-3 {
+    grid-area: top / left;
+}
+
+.grid-item-4 {
+    grid-row: top-start / top-end;
+    grid-column: center-start / center-end;
+}
+
+[class^='grid-item'] {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    outline: 3px dashed #f90;
+    font-size: 30px;
+    color: black;
+}

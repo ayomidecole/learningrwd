@@ -574,3 +574,73 @@ So, each `.item` will take up exactly one third of the container and won’t str
    **Summary:**  
    - Use `grid-column` and `grid-row` to place and size grid items by lines.
    - Use `span` to make an item stretch across multiple rows or columns from its starting line.
+
+### 07/07/2025
+
+1. **Named Grid Lines**
+
+   CSS Grid lets you assign names to grid lines by putting names in square brackets (`[]`) within your `grid-template-columns` or `grid-template-rows`. This makes layouts easier to read and maintain!
+
+   For example:
+   - The first vertical line is named `left-start`
+   - The second line is named both `left-end` and `center-start`
+   - The third line is named both `center-end` and `right-start`
+   - The last line is named `right-end`
+
+   ```css
+   .my-first-grid {
+       display: inline-grid;
+       gap: 10px;
+       grid-template-columns:
+           [left-start] 200px
+           [left-end center-start] 200px
+           [center-end right-start] 200px
+           [right-end];
+       grid-template-rows:
+           [top-start] 200px
+           [top-end middle-start] 200px
+           [middle-end bottom-start] 200px
+           [bottom-end];
+       background-color: #e4e4e4;
+   }
+   ```
+
+   - You can now position items using these names instead of numbers.  
+     For example, to stretch an item from `left-start` to `center-end`:  
+     `grid-column: left-start / center-end;`
+
+2. **Using Named Grid Areas for Easy Placement**
+
+   CSS Grid provides a shortcut for placing items if your grid line names end with `-start` and `-end`. When you do this, Grid automatically creates *named grid areas* for you.
+
+   With named areas, you can position items using the `grid-area` property. The syntax is:
+
+   ```
+   grid-area: row-start / column-start;
+   ```
+
+   Here’s an example using a grid with named lines:
+
+   ```css
+   .grid-item-1 {
+       grid-area: middle / center;
+   }
+
+   .grid-item-2 {
+       grid-area: bottom / right;
+   }
+
+   .grid-item-3 {
+       grid-area: top / left;
+   }
+   ```
+
+   - `grid-area: middle / center;`  
+     This places the item at the intersection of the row named `middle` and the column named `center`.
+   - `grid-area: bottom / right;`  
+     This places the item at the row named `bottom` and column named `right`.
+   - `grid-area: top / left;`  
+     This places the item at the row named `top` and column named `left`.
+
+   **Why is this useful?**  
+   Instead of remembering grid line numbers, you can use meaningful names, making your CSS easier to read and maintain!
