@@ -1,0 +1,11 @@
+span {
+    height: 2rem;
+    width: 2rem;
+    background-color: blue;
+    display: inline-block;
+}
+
+.span:nth-of-type(-2n + 3) {
+    background-color: #f90;
+    border-radius: 50%;
+}

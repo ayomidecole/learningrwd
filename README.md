@@ -712,3 +712,22 @@ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 ```
 
 Now, as the container gets wider or narrower, the grid will add or remove columns, and each column will always be at least 200px wide but stretch as needed!
+
+
+6. **Anatomy of a CSS rule**
+  ```css
+    .selector {
+      /* comment */
+      property: value; /* declaratiom */
+    }
+  ```
+
+7. **Pseudo-elements and Pseudo-classes**
+
+   - **Pseudo-classes** let you style elements based on their state or position (like when you hover over a link, or target only the first child in a list).  
+     Example: `a:hover { color: red; }` makes links turn red when you hover your mouse over them.
+
+   - **Pseudo-elements** let you style specific parts of an element, such as the first letter or line, or add decorative content before/after an element.  
+     Example: `p::first-line { font-weight: bold; }` makes just the first line of every paragraph bold.
+
+   Both start with a colon (`:`), but pseudo-elements use two (`::`) in modern CSS.
