@@ -644,3 +644,71 @@ So, each `.item` will take up exactly one third of the container and won’t str
 
    **Why is this useful?**  
    Instead of remembering grid line numbers, you can use meaningful names, making your CSS easier to read and maintain!
+
+3. **`grid-template-areas`**
+
+   The `grid-template-areas` property lets you visually describe your grid layout by naming each cell. Each quoted line creates a row, and within each line, you specify the area name for each cell (space-separated). For example:
+
+   ```css
+   .my-first-grid {
+       display: grid;
+       grid-template-areas:
+           "one two three"
+           "four five six"
+           "seven eight nine";
+       grid-template-columns: 100px 100px 100px;
+       grid-template-rows: 100px 100px 100px;
+       gap: 10px;
+   }
+   ```
+
+   Now, you can assign each grid item to a named area using `grid-area`:
+
+   ```css
+   .grid-item-1 {
+       grid-area: five;
+   }
+   .grid-item-2 {
+       grid-area: nine;
+   }
+   .grid-item-3 {
+       grid-area: one;
+   }
+   ```
+
+   This approach makes your layout much more readable, since you’re using descriptive area names rather than line numbers.
+
+4. **`auto-fit` and `auto-fill`**
+
+  `auto-fit` and `auto-fill` are "repeat-to-fill" keywords used to automatically create as many columns as will fit in the container.
+
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+5. **The `minmax()` Function in CSS Grid**
+
+The `minmax()` function is used in CSS Grid to set a minimum and maximum size for a track (a row or column). This is super useful when you want your grid cells to be flexible: big enough to fit the content, but never too small or too large.
+
+For example, if you want each column to be at least 200px wide but grow to fill available space (up to 1 fraction of the container), you can write:
+
+```css
+.my-first-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    gap: 10px;
+}
+```
+
+- `minmax(200px, 1fr)` means:  
+  "This column should be no smaller than 200px, but can grow up to fill a share of the available space (1fr = one fraction)."
+
+Why is this powerful?  
+- It lets your layout adapt: columns won't shrink below a certain point, which keeps content readable, but will expand to fill the container as needed.
+- It's often used together with `auto-fit` or `auto-fill` to make *responsive* grids that look good on any screen size.
+
+Try combining it with the previous example:
+
+```css
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+```
+
+Now, as the container gets wider or narrower, the grid will add or remove columns, and each column will always be at least 200px wide but stretch as needed!
